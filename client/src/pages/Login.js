@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Input } from "@material-tailwind/react";
 
 const Login = () => {
     const [userName, setUserName] = useState('')
@@ -16,7 +17,13 @@ const Login = () => {
                 placeholder="username"
 
              />
+
             
+
+            <div className="flex w-72 flex-col gap-6">
+
+
+            </div>
             <div className="relative w-full lg:max-w-sm">
                 <select className="w-full p-2.5 text-gray-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-indigo-600">
                     <option>Select Room to Join</option>

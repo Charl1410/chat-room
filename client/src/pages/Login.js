@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Input } from "@material-tailwind/react";
 
+//pulling through the props passing from App.js
 const Login = ({username, setUsername, room, setRoom, socket}) => {
     
  

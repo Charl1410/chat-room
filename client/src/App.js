@@ -8,7 +8,7 @@ import Login from './pages/Login'
 const socket = io.connect('http://localhost:4000'); 
 
 function App() {
-  const [username, setUsername] = useState(''); // Add this
+  const [username, setUsername] = useState('');
   const [room, setRoom] = useState('');
   return (
    <Router>

@@ -31,6 +31,8 @@ io.on("connection", (socket) => {
       message: `${username} has joined the room!`,
       username: CHAT_BOT,
       __createdtime__,
+      message: `Welcome ${username} ! `,
+      __createdtime__,
     });
   });
 });

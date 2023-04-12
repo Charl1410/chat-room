@@ -16,7 +16,7 @@
 
 ## Usage
 
-# Contributors
+## Contributors
 
 ## Licence 
 

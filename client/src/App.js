@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import io from 'socket.io-client';
 import Login from './pages/Login'
+import Chat from './pages/Chat'
 
 const socket = io.connect('http://localhost:4000'); 
 

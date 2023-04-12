@@ -9,7 +9,7 @@ app.use(cors()); // Add cors middleware
 
 const server = http.createServer(app);
 
-// Add this
+
 // Create an io server and allow for CORS from http://localhost:3000 with GET and POST methods
 const io = new Server(server, {
     cors: {
@@ -21,7 +21,6 @@ const io = new Server(server, {
 io.on('connection', (socket) => {
     console.log(`User connected ${socket.id}`);
   
-    // We can write our socket event listeners in here...
 });
   
 

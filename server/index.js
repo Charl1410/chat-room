@@ -25,6 +25,8 @@ let allUsers = [];
 io.on("connection", (socket) => {
   console.log(`User connected ${socket.id}`);
 
+  
+
   socket.on("join_room", (data) => {
     const { username, room } = data;
     socket.join(room);
@@ -37,6 +39,12 @@ io.on("connection", (socket) => {
       message: `Welcome ${username} ! `,
       __createdtime__,
     });
+    
+    chatRoom = room;
+    allUsers.push({ id: socket.id, username, room });
+    chatRoomUsers = allUsers.filter((user) => user.room === room);
+    socket.to(room).emit('chatroom_users', chatRoomUsers);
+    socket.emit('chatroom_users', chatRoomUsers);
   });
 });
 

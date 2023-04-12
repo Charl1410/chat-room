@@ -19,6 +19,9 @@ const io = new Server(server, {
 
 const CHAT_BOT = "ChatBot";
 
+let chatRoom = '';
+let allUsers = [];
+
 io.on("connection", (socket) => {
   console.log(`User connected ${socket.id}`);
 

@@ -1,9 +1,7 @@
 import styles from './styles.module.css';
 import { useState, useEffect } from 'react';
-
 import React from 'react'
 
-function SentMessages() {
   const Messages = ({socket}) => {
     //setting messagesRecieved to an empty array in this state
     const[messagesRecieved, setMessagesRecieved] = useState([]);
@@ -31,13 +29,25 @@ function SentMessages() {
         return date.toLocaleString()
     }
 
-  }
+  
   
     return (
-    <div className="w-96 h-96 border-indigo-500">
-        
+      <div className={styles.messagesColumn}>
+      {messagesRecieved.map((msg, i) => (
+        <div className={styles.message} key={i}>
+          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <span className={styles.msgMeta}>{msg.username}</span>
+            <span className={styles.msgMeta}>
+              {formatDateFromTimestamp(msg.__createdtime__)}
+            </span>
+          </div>
+          <p className={styles.msgText}>{msg.message}</p>
+          <br />
+        </div>
+      ))}
     </div>
   )
 }
 
-export default SentMessages
+
+export default Messages

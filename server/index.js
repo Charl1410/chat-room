@@ -29,6 +29,7 @@ io.on("connection", (socket) => {
 
   socket.on("join_room", (data) => {
     const { username, room } = data;
+    console.log(data);
     socket.join(room);
 
     let __createdtime__ = Date.now();
@@ -48,4 +49,6 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(4000, () => "Server running onport 3000");
+server.listen(4000, () => {
+  console.log("Server running on port 4000");
+});

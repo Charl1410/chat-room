@@ -25,6 +25,7 @@ function App() {
 
            <Route path='/chat'
            //the element specifies what content should be rendered
+           //passing in props to be used in the component 
            element={<Chat username={username} room={room} socket={socket} />} 
            />
            

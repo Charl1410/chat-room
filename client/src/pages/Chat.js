@@ -5,7 +5,7 @@ import React from 'react'
 const Chat = ({socket}) => {
   return (
     //style 
-    <div className=''>
+    <div className='w-96 h-96 border-black-500'>
     <div>
       <MessagesReceived socket={socket} />
     </div>

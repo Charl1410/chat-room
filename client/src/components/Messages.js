@@ -31,19 +31,21 @@ import React from 'react'
   
   
     return (
-      <div className='border-indigo-500'>
-        <p>hello</p>
+      <div className='h-96 p-10 border border-sky-500'>
+        <div></div>
       {messagesRecieved.map((msg, i) => (
-        <div className='' key={i}>
+        //for each message generating this html 
+        <div className='bg-grey mb-10 border border-sky-500' key={i}>
           <div>
             <span className='text-black'>{msg.username}</span>
-            <span className=''>
+            <span className='text-black-50'>
               {formatDateFromTimestamp(msg.__createdtime__)}
             </span>
           </div>
-          <p className=''>{msg.message}</p>
+          <p className='text-black-50'>{msg.message}</p>
           <br />
         </div>
+        //to here
       ))}
     </div>
   )

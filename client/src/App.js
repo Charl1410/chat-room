@@ -22,6 +22,12 @@ function App() {
            setRoom={setRoom}
            socket={socket}  />
            } />
+
+           <Route path='/chat'
+           //the element specifies what content should be rendered
+           element={<Chat username={username} room={room} socket={socket} />} 
+           />
+           
         </Routes>
 
       </div>

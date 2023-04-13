@@ -1,15 +1,14 @@
-import styles from './styles.module.css';
 import { useState, useEffect } from 'react';
 import React from 'react'
 
-  const Messages = ({socket}) => {
+  const MessagesReceived = ({socket}) => {
     //setting messagesRecieved to an empty array in this state
     const[messagesRecieved, setMessagesRecieved] = useState([]);
 
     useEffect(() => {
         socket.on('receive_message', (data) => {
           console.log(data);
-          setMessagesReceived((state) => [
+          setMessagesRecieved((state) => [
             ...state,
             {
               message: data.message,
@@ -32,16 +31,17 @@ import React from 'react'
   
   
     return (
-      <div className={styles.messagesColumn}>
+      <div className='border-indigo-500'>
+        <p>hello</p>
       {messagesRecieved.map((msg, i) => (
-        <div className={styles.message} key={i}>
-          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <span className={styles.msgMeta}>{msg.username}</span>
-            <span className={styles.msgMeta}>
+        <div className='' key={i}>
+          <div>
+            <span className='text-black'>{msg.username}</span>
+            <span className=''>
               {formatDateFromTimestamp(msg.__createdtime__)}
             </span>
           </div>
-          <p className={styles.msgText}>{msg.message}</p>
+          <p className=''>{msg.message}</p>
           <br />
         </div>
       ))}
@@ -50,4 +50,4 @@ import React from 'react'
 }
 
 
-export default Messages
+export default MessagesReceived
